@@ -1,3 +1,4 @@
+
 #include "raylib.h"
 #include "raymath.h"
 #include "Character.h"
@@ -20,14 +21,13 @@ int main()
         Prop{Vector2{600.f, 300.f},
              LoadTexture("Tiles/Rock.png")},
         Prop{Vector2{400.f, 500.f},
-             LoadTexture("Tiles/Log.png")}
-             };
+             LoadTexture("Tiles/Log.png")}};
 
     Enemy goblin{
         Vector2{},
         LoadTexture("Tiles/goblin_idle_spritesheet.png"),
-        LoadTexture("Tiles/goblin_run_spritesheet.png")
-        };
+        LoadTexture("Tiles/goblin_run_spritesheet.png")};
+    goblin.setTarget(&knight);
 
     SetTargetFPS(60);
     while (!WindowShouldClose())
@@ -70,3 +70,4 @@ int main()
 
     CloseWindow();
 }
+
